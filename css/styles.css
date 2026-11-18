@@ -301,3 +301,16 @@ h2 em{font-size:1.08em}
 @media (max-width:860px){.check-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.form__row--3,.check-grid,.our-contact__grid{grid-template-columns:1fr}.assess-form{margin-top:-60px}.assess-hero{padding:120px 0 80px}}
 [hidden]{display:none!important}
+
+/* ===== OTP + success states ===== */
+.otp{display:grid;gap:.5rem;padding:1rem 1.1rem;border-radius:14px;background:var(--blue-50);border:1px dashed #c4d3fb}
+.otp__row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.otp .otp__code{width:150px;flex:none;letter-spacing:.3em;font-weight:700;text-align:center;padding:.65rem .8rem;border-radius:10px;border:1px solid var(--line);background:#fff;font:inherit}
+.otp__status{font-size:.85rem;color:var(--muted)}
+.otp__status--ok{color:#178f49;font-weight:600}
+.otp__status--error{color:#d93636}
+.otp--done{background:#eefaf3;border-color:#a6dfbf;border-style:solid}
+.assess-done{text-align:center;padding:3rem 1rem;display:grid;gap:1rem;justify-items:center}
+.assess-done__icon{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;font-size:2rem;color:#fff;background:linear-gradient(135deg,var(--orange-300),var(--orange-600))}
+.assess-done h2{font-size:2rem}
+.assess-done p{color:var(--muted);max-width:520px}

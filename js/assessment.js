@@ -7,8 +7,11 @@
   var preview = document.getElementById('previewMap');
   var note = document.getElementById('assessNote');
   var servicesError = document.getElementById('servicesError');
-  var PHONE = '917676276066';
-  var EMAIL = 'info@havyaifm.com';
+  var cfg = window.HAVYA_CONFIG || {};
+  var PHONE = cfg.whatsappNumber || '917676276066';
+  var otp = window.HavyaForms ? window.HavyaForms.attachOtp(form.elements.mobile) :
+    { enabled: false, isVerified: function () { return true; }, focus: function () {} };
+  var submitBtns = form.querySelectorAll('button[type=submit]');
   var via = 'email';
 
   function updatePreview() {
@@ -63,42 +66,56 @@
       return;
     }
 
-    var lines = [
-      'SITE ASSESSMENT REQUEST',
-      '',
-      '— Site details —',
-      'Site name: ' + val('site_name'),
-      'Property type: ' + val('property_type'),
-      'Built-up area: ' + (val('area') || '-'),
-      'Floors / blocks: ' + (val('floors') || '-'),
-      'Occupants / units: ' + (val('occupancy') || '-'),
-      'Address: ' + val('address'),
-      'City: ' + val('city') + (val('pincode') ? ' - ' + val('pincode') : ''),
-      'Google location: ' + (val('map_link') || '-'),
-      '',
-      '— Services —',
-      services.join(', '),
-      'Request type: ' + val('request_type'),
-      'Preferred visit date: ' + (val('visit_date') || '-'),
-      'Notes: ' + (val('notes') || '-'),
-      '',
-      '— Contact —',
-      'Name: ' + val('name') + (val('designation') ? ' (' + val('designation') + ')' : ''),
-      'Company: ' + (val('company') || '-'),
-      'Mobile: ' + val('mobile'),
-      'Email: ' + val('email'),
-      'Preferred contact: ' + val('contact_pref')
-    ];
-    var body = lines.join('\n');
+    if (!otp.isVerified()) { note.textContent = 'Please verify your mobile number with OTP.'; otp.focus(); return; }
+
+    var fields = {
+      'Form': 'Site assessment request',
+      'Site name': val('site_name'),
+      'Property type': val('property_type'),
+      'Built-up area (sq ft)': val('area'),
+      'Floors / blocks': val('floors'),
+      'Occupants / units': val('occupancy'),
+      'Address': val('address'),
+      'City': val('city'),
+      'PIN code': val('pincode'),
+      'Google location': val('map_link'),
+      'Services required': services.join(', '),
+      'Request type': val('request_type'),
+      'Preferred visit date': val('visit_date'),
+      'Notes': val('notes'),
+      'Name': val('name'),
+      'Designation': val('designation'),
+      'Company': val('company'),
+      'Mobile': val('mobile'),
+      'Mobile verified': otp.enabled ? 'Yes (OTP)' : 'Not checked',
+      'Email': val('email'),
+      'Preferred contact': val('contact_pref')
+    };
+    var body = 'SITE ASSESSMENT REQUEST\n\n' + Object.keys(fields).slice(1).map(function (k) {
+      return k + ': ' + (fields[k] || '-');
+    }).join('\n');
 
     if (via === 'whatsapp') {
       window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(body), '_blank', 'noopener');
       note.textContent = 'Opening WhatsApp… just press send. Thank you!';
-    } else {
-      window.location.href = 'mailto:' + EMAIL + '?subject=' +
-        encodeURIComponent('Site assessment request – ' + val('site_name') + ', ' + val('city')) +
-        '&body=' + encodeURIComponent(body);
-      note.textContent = 'Opening your email app… just press send. Thank you!';
+      return;
     }
+    submitBtns.forEach(function (b) { b.disabled = true; });
+    note.textContent = 'Sending your request…';
+    window.HavyaForms.send({
+      subject: 'Site assessment request – ' + val('site_name') + ', ' + val('city'),
+      fields: fields, body: body, replyTo: val('email')
+    }).then(function (r) {
+      if (r.via === 'formspree') {
+        form.innerHTML = '<div class="assess-done"><div class="assess-done__icon">✓</div><h2>Request received</h2>' +
+          '<p>Thank you for sharing your site details. Our team will review them and contact you shortly to schedule the assessment.</p>' +
+          '<a class="btn btn--orange" href="index.html">Back to home</a></div>';
+        window.scrollTo({ top: document.querySelector('.assess').offsetTop - 80, behavior: 'smooth' });
+      } else {
+        note.textContent = 'Opening your email app… just press send. Thank you!';
+      }
+    }).catch(function () {
+      note.textContent = 'Sorry, something went wrong. Please try WhatsApp or call +91 76762 76066.';
+    }).then(function () { submitBtns.forEach(function (b) { b.disabled = false; }); });
   });
 })();

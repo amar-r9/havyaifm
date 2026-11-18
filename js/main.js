@@ -35,26 +35,43 @@
     items.forEach(function (el) { el.classList.add('is-in'); });
   }
 
-  // Contact form -> opens the visitor's mail client (static site, no backend)
+  // Contact form -> Formspree (or email app fallback), with optional mobile OTP
   var form = document.getElementById('contactForm');
-  if (form) {
-  var note = form.querySelector('.form__note');
-  form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    var ok = true;
-    form.querySelectorAll('[required]').forEach(function (f) {
-      var bad = !f.value.trim() || (f.type === 'email' && !/^\S+@\S+\.\S+$/.test(f.value));
-      f.classList.toggle('is-invalid', bad);
-      if (bad) ok = false;
+  if (form && window.HavyaForms) {
+    var note = form.querySelector('.form__note');
+    var btn = form.querySelector('button[type=submit]');
+    var otp = window.HavyaForms.attachOtp(form.elements.phone);
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var ok = true;
+      form.querySelectorAll('[required]').forEach(function (f) {
+        var bad = !f.value.trim() || (f.type === 'email' && !/^\S+@\S+\.\S+$/.test(f.value)) ||
+          (f.type === 'tel' && f.value.replace(/\D/g, '').length < 10);
+        f.classList.toggle('is-invalid', bad);
+        if (bad) ok = false;
+      });
+      if (!ok) { note.textContent = 'Please fill in the highlighted fields.'; return; }
+      if (!otp.isVerified()) { note.textContent = 'Please verify your mobile number.'; otp.focus(); return; }
+      var d = new FormData(form);
+      var fields = {
+        'Form': 'Website enquiry',
+        'Name': d.get('name'),
+        'Company': d.get('company'),
+        'Email': d.get('email'),
+        'Mobile': d.get('phone'),
+        'Mobile verified': otp.enabled ? 'Yes (OTP)' : 'Not checked',
+        'Property type': d.get('type'),
+        'Message': d.get('message')
+      };
+      btn.disabled = true; note.textContent = 'Sending…';
+      window.HavyaForms.send({ subject: 'Website enquiry from ' + d.get('name'), fields: fields, replyTo: d.get('email') })
+        .then(function (r) {
+          if (r.via === 'formspree') { form.reset(); note.textContent = 'Thank you! Your enquiry has been sent. Our team will contact you shortly.'; }
+          else { note.textContent = 'Opening your email app… just press send. Thank you!'; }
+        })
+        .catch(function () { note.textContent = 'Sorry, something went wrong. Please call or WhatsApp us on +91 76762 76066.'; })
+        .then(function () { btn.disabled = false; });
     });
-    if (!ok) { note.textContent = 'Please fill in the highlighted fields.'; return; }
-    var d = new FormData(form);
-    var body = 'Name: ' + d.get('name') + '\nCompany: ' + d.get('company') + '\nEmail: ' + d.get('email') +
-      '\nPhone: ' + d.get('phone') + '\nProperty type: ' + d.get('type') + '\n\n' + d.get('message');
-    window.location.href = 'mailto:info@havyaifm.com?subject=' +
-      encodeURIComponent('Enquiry from ' + d.get('name')) + '&body=' + encodeURIComponent(body);
-    note.textContent = 'Opening your email app… Thank you for reaching out!';
-  });
   }
 
   document.getElementById('year').textContent = new Date().getFullYear();
