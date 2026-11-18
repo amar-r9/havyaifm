@@ -2,7 +2,7 @@
   var nav = document.querySelector('.nav');
   var toggle = document.querySelector('.nav__toggle');
 
-  function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 40); }
+  function onScroll() { nav.classList.toggle('is-scrolled', nav.classList.contains('nav--solid') || window.scrollY > 40); }
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -37,6 +37,7 @@
 
   // Contact form -> opens the visitor's mail client (static site, no backend)
   var form = document.getElementById('contactForm');
+  if (form) {
   var note = form.querySelector('.form__note');
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
@@ -54,6 +55,7 @@
       encodeURIComponent('Enquiry from ' + d.get('name')) + '&body=' + encodeURIComponent(body);
     note.textContent = 'Opening your email app… Thank you for reaching out!';
   });
+  }
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

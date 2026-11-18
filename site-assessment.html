@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Site Assessment — Havya IFM</title>
+  <meta name="description" content="Request a free site assessment from Havya IFM. Share your site details, location and the services you need, and our team will get in touch.">
+  <meta name="theme-color" content="#0B1F4B">
+  <link rel="canonical" href="https://havyaifm.com/site-assessment.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-assess">
+
+<header class="nav nav--solid" id="top">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand" aria-label="Havya IFM home">
+      <img class="logo logo--light" src="assets/logo-white.svg" alt="Havya IFM">
+      <img class="logo logo--dark" src="assets/logo.svg" alt="" aria-hidden="true">
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#sectors">Sectors</a>
+      <a href="index.html#why">Why Havya</a>
+      <a href="index.html#approach">Approach</a>
+    </nav>
+    <a href="tel:+917676276066" class="btn btn--orange btn--sm nav__cta">Call +91 76762 76066</a>
+    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="assess-hero">
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to home</a>
+    <p class="eyebrow eyebrow--orange">Free site assessment</p>
+    <h1>Tell us about your <em>site</em>.</h1>
+    <p class="lead">Share a few details about your property and the services you need. Our team will review them, contact you to schedule a visit, and prepare a tailored proposal — at no obligation.</p>
+  </div>
+</section>
+
+<section class="assess">
+  <div class="container">
+    <form class="assess-form" id="assessForm" novalidate>
+
+      <fieldset>
+        <legend><span>1</span>Site details</legend>
+        <div class="form__row">
+          <label>Property / site name *<input name="site_name" required placeholder="e.g. Sunrise Business Park"></label>
+          <label>Property type *
+            <select name="property_type" required>
+              <option value="">Select type</option>
+              <option>Commercial / Office</option><option>Residential community</option><option>Hospital / Healthcare</option><option>Hotel / Guest house</option><option>Farmhouse / Estate</option><option>Industrial / Factory</option><option>Institutional / Campus</option><option>Other</option>
+            </select>
+          </label>
+        </div>
+        <div class="form__row form__row--3">
+          <label>Built-up area (sq ft)<input name="area" inputmode="numeric" placeholder="e.g. 50,000"></label>
+          <label>Floors / blocks<input name="floors" placeholder="e.g. G+10, 2 blocks"></label>
+          <label>Occupants / units<input name="occupancy" placeholder="e.g. 400 staff"></label>
+        </div>
+        <label>Site address *<textarea name="address" rows="2" required placeholder="Building, street, area"></textarea></label>
+        <div class="form__row">
+          <label>City *<input name="city" required></label>
+          <label>PIN code<input name="pincode" inputmode="numeric" maxlength="6"></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>2</span>Google location</legend>
+        <p class="hint">Paste a Google Maps link to your site, or use your current location if you're on site right now.</p>
+        <label>Google Maps link<input name="map_link" id="mapLink" type="url" placeholder="https://maps.app.goo.gl/…"></label>
+        <div class="loc-actions">
+          <button type="button" class="btn btn--blue btn--sm" id="useLocation">📍 Use my current location</button>
+          <a class="btn btn--line btn--sm" href="https://www.google.com/maps" target="_blank" rel="noopener">Open Google Maps ↗</a>
+          <a class="btn btn--line btn--sm" id="previewMap" href="#" target="_blank" rel="noopener" hidden>View pinned location ↗</a>
+        </div>
+        <p class="loc-status" id="locStatus" role="status"></p>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>3</span>Services required</legend>
+        <p class="hint">Select all that apply.</p>
+        <div class="check-grid">
+          <label class="check"><input type="checkbox" name="services" value="MEP & Technical Services"><span>MEP & Technical</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Security Management"><span>Security</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Housekeeping & Cleaning"><span>Housekeeping & Cleaning</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Pest Control"><span>Pest Control</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Landscaping & Gardening"><span>Landscaping</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Cafeteria & Catering"><span>Cafeteria & Catering</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Office / Workspace Management"><span>Workspace Management</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Event Management"><span>Events & Venues</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Waste Management"><span>Waste Management</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Parking Management"><span>Parking Management</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Technical Audit"><span>Technical Audit</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Comprehensive AMC"><span>Comprehensive AMC</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Energy Audit / Green Building"><span>Energy & Green Building</span></label>
+          <label class="check"><input type="checkbox" name="services" value="Integrated (all services)"><span>Fully Integrated FM</span></label>
+        </div>
+        <p class="field-error" id="servicesError"></p>
+        <div class="form__row">
+          <label>Request type
+            <select name="request_type">
+              <option>New contract</option><option>Replace current vendor</option><option>One-time / short-term job</option><option>Audit / consultation only</option>
+            </select>
+          </label>
+          <label>Preferred visit date<input type="date" name="visit_date"></label>
+        </div>
+        <label>Anything else we should know?<textarea name="notes" rows="3" placeholder="Current challenges, timelines, manpower needed…"></textarea></label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>4</span>Your contact details</legend>
+        <div class="form__row">
+          <label>Full name *<input name="name" required autocomplete="name"></label>
+          <label>Designation<input name="designation" autocomplete="organization-title"></label>
+        </div>
+        <div class="form__row">
+          <label>Company / organisation<input name="company" autocomplete="organization"></label>
+          <label>Mobile number *<input type="tel" name="mobile" required autocomplete="tel" placeholder="+91"></label>
+        </div>
+        <div class="form__row">
+          <label>Email *<input type="email" name="email" required autocomplete="email"></label>
+          <label>Preferred contact
+            <select name="contact_pref"><option>Phone call</option><option>WhatsApp</option><option>Email</option></select>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="assess-submit">
+        <p class="form__note" id="assessNote" role="status"></p>
+        <div class="assess-submit__btns">
+          <button class="btn btn--orange" type="submit" data-via="email">Submit by Email <span aria-hidden="true">→</span></button>
+          <button class="btn btn--whatsapp" type="submit" data-via="whatsapp">Send on WhatsApp</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="our-contact">
+  <div class="container">
+    <div class="our-contact__head">
+      <p class="eyebrow eyebrow--orange">Prefer to talk?</p>
+      <h2>Reach Havya IFM <em>directly</em>.</h2>
+    </div>
+    <div class="our-contact__grid">
+      <a class="oc-card" href="tel:+917676276066"><span class="oc-card__label">Call us</span><strong>+91 76762 76066</strong><small>Speak to our team</small></a>
+      <a class="oc-card" href="https://wa.me/917676276066" target="_blank" rel="noopener"><span class="oc-card__label">WhatsApp</span><strong>+91 76762 76066</strong><small>Quick replies on chat</small></a>
+      <a class="oc-card" href="mailto:info@havyaifm.com"><span class="oc-card__label">Email</span><strong>info@havyaifm.com</strong><small>Write to us anytime</small></a>
+      <a class="oc-card" href="https://havyaifm.com"><span class="oc-card__label">Website</span><strong>havyaifm.com</strong><small>Integrated Facility Management</small></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <img class="footer__logo" src="assets/logo-white.svg" alt="Havya IFM">
+      <p>Integrated Facility Management.<br>15+ years of expertise in safe, sustainable facilities.</p>
+    </div>
+    <div><h4>Services</h4><a href="index.html#services">MEP & Technical</a><a href="index.html#services">Security</a><a href="index.html#services">Soft Services</a><a href="index.html#services">Landscaping</a><a href="index.html#services">Hospitality</a></div>
+    <div><h4>Company</h4><a href="index.html#about">About</a><a href="index.html#why">Why Havya</a><a href="index.html#approach">Approach</a><a href="index.html#contact">Contact</a></div>
+    <div><h4>Reach us</h4><a href="tel:+917676276066">+91 76762 76066</a><a href="mailto:info@havyaifm.com">info@havyaifm.com</a><a href="https://havyaifm.com">havyaifm.com</a></div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span id="year">2026</span> Havya IFM. All rights reserved.</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/assessment.js"></script>
+</body>
+</html>
