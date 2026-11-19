@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Havya IFM — Integrated Facility Management</title>
-  <meta name="description" content="Havya IFM delivers integrated facility management — MEP, security, housekeeping, landscaping, hospitality and workspace services for commercial, residential, healthcare and hospitality properties.">
+  <meta name="description" content="Havya IFM — integrated facility management: MEP, security, housekeeping, front office, horticulture and more. 15+ years of expertise.">
   <meta name="theme-color" content="#0B1F4B">
   <link rel="canonical" href="https://havyaifm.com/">
   <meta property="og:title" content="Havya IFM — Integrated Facility Management">
@@ -48,8 +48,11 @@
   <div class="container hero__inner">
     <div class="hero__copy">
       <span class="badge"><span class="badge__dot"></span>15+ years of facility management expertise</span>
-      <h1>Facilities that run as <em>brilliantly</em> as they were built.</h1>
-      <p class="lead">Havya IFM brings engineering, security, housekeeping, landscaping and hospitality under one accountable partner — so your buildings perform, and your people thrive.</p>
+      <h1 aria-label="Integrated facility management: one partner for every service">
+        <span class="hero__line">One partner for</span>
+        <span class="hero__rot"><span class="rot-word" id="rotWord">MEP Services</span></span>
+      </h1>
+      <p class="lead">Integrated facility management — safe, efficient and sustainable.</p>
       <div class="hero__actions">
         <a href="site-assessment.html" class="btn btn--orange">Request a Site Assessment <span aria-hidden="true">→</span></a>
         <a href="#services" class="btn btn--ghost">Explore Services</a>
@@ -61,39 +64,17 @@
       </ul>
     </div>
 
-    <div class="hero__visual" aria-hidden="true">
-      <svg class="towers" viewBox="0 0 420 520" fill="none">
-        <defs>
-          <linearGradient id="tw" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#7AA2FF" stop-opacity="1"/>
-            <stop offset="1" stop-color="#1E4FD8" stop-opacity=".55"/>
-          </linearGradient>
-          <linearGradient id="br" x1="0" x2="1">
-            <stop offset="0" stop-color="#FFB25B"/><stop offset="1" stop-color="#F26A10"/>
-          </linearGradient>
-        </defs>
-        <g class="tower tower--l">
-          <path d="M70 520V190h10v-50h12v-44h12V64l14-46h4l14 46v32h12v44h12v50h10v330z" fill="url(#tw)" stroke="#9DB8FF" stroke-opacity=".5"/>
-          <path d="M120 18V0" stroke="#9DB8FF" stroke-width="3"/>
-          <g stroke="#fff" stroke-opacity=".18"><path d="M92 210v300M106 150v360M120 110v400M134 150v360M148 210v300"/></g>
-        </g>
-        <g class="tower tower--r">
-          <path d="M250 520V190h10v-50h12v-44h12V64l14-46h4l14 46v32h12v44h12v50h10v330z" fill="url(#tw)" stroke="#9DB8FF" stroke-opacity=".5"/>
-          <path d="M300 18V0" stroke="#9DB8FF" stroke-width="3"/>
-          <g stroke="#fff" stroke-opacity=".18"><path d="M272 210v300M286 150v360M300 110v400M314 150v360M328 210v300"/></g>
-        </g>
-        <g class="bridge">
-          <rect x="170" y="268" width="80" height="14" rx="3" fill="url(#br)"/>
-          <path d="M210 282 172 330M210 282l38 48" stroke="url(#br)" stroke-width="6" stroke-linecap="round"/>
-        </g>
-      </svg>
-      <div class="float-card float-card--a">
-        <span class="float-card__icon">⚡</span>
-        <div><strong>MEP uptime</strong><small>Preventive · Predictive · AMC</small></div>
-      </div>
-      <div class="float-card float-card--b">
-        <span class="float-card__icon float-card__icon--orange">●</span>
-        <div><strong>Live command desk</strong><small>Security & helpdesk, round the clock</small></div>
+    <div class="hero__visual">
+      <div class="svc-grid" id="svcGrid">
+        <a class="svc-tile" href="#services" data-label="MEP Services"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg><span>MEP Services</span></a>
+        <a class="svc-tile" href="#services" data-label="Security"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><span>Security</span></a>
+        <a class="svc-tile" href="#services" data-label="Housekeeping"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg><span>Housekeeping</span></a>
+        <a class="svc-tile" href="#services" data-label="Front Office"><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><span>Front Office</span></a>
+        <a class="svc-tile" href="#services" data-label="Horticulture"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8Z"/><path d="M12 14c0-4 3-7 9-7 0 4-3 7-9 7Z"/></svg><span>Horticulture</span></a>
+        <a class="svc-tile" href="#services" data-label="Pest Control"><svg viewBox="0 0 24 24"><path d="M8 9h8v7a4 4 0 0 1-8 0Z"/><path d="M9 9a3 3 0 0 1 6 0M4 13h4M16 13h4M5 8l3 2M19 8l-3 2M5 19l3-2M19 19l-3-2"/></svg><span>Pest Control</span></a>
+        <a class="svc-tile" href="#services" data-label="Cafeteria & Catering"><svg viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg><span>Cafeteria & Catering</span></a>
+        <a class="svc-tile" href="#services" data-label="Events & Workspaces"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg><span>Events & Workspaces</span></a>
+        <a class="svc-tile" href="#services" data-label="AMC & Audits"><svg viewBox="0 0 24 24"><path d="M9 3h6v4H9z"/><path d="M7 5H5v16h14V5h-2"/><path d="m9 14 2 2 4-4"/></svg><span>AMC & Audits</span></a>
       </div>
     </div>
   </div>
@@ -102,8 +83,8 @@
 <!-- ============ MARQUEE ============ -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
-    <span>MEP Services</span><span>Security</span><span>Housekeeping</span><span>Landscaping</span><span>Pest Control</span><span>Cafeteria & Catering</span><span>Workspace Management</span><span>Technical Audits</span><span>Waste Management</span><span>Parking Management</span><span>AMC</span><span>Event Coordination</span>
-    <span>MEP Services</span><span>Security</span><span>Housekeeping</span><span>Landscaping</span><span>Pest Control</span><span>Cafeteria & Catering</span><span>Workspace Management</span><span>Technical Audits</span><span>Waste Management</span><span>Parking Management</span><span>AMC</span><span>Event Coordination</span>
+    <span>MEP Services</span><span>Security</span><span>Housekeeping</span><span>Horticulture</span><span>Front Office</span><span>Pest Control</span><span>Cafeteria & Catering</span><span>Workspace Management</span><span>Technical Audits</span><span>Waste Management</span><span>Parking Management</span><span>AMC</span><span>Event Coordination</span>
+    <span>MEP Services</span><span>Security</span><span>Housekeeping</span><span>Horticulture</span><span>Front Office</span><span>Pest Control</span><span>Cafeteria & Catering</span><span>Workspace Management</span><span>Technical Audits</span><span>Waste Management</span><span>Parking Management</span><span>AMC</span><span>Event Coordination</span>
   </div>
 </div>
 
@@ -115,8 +96,7 @@
       <h2>A new standard for how buildings are <em>cared for</em>.</h2>
     </div>
     <div class="about__body reveal">
-      <p>Havya IFM is built on more than 15 years of hands-on experience in facility management across a wide range of industries. Our approach is rooted in green building principles and energy-saving practices — helping clients run efficient, sustainable properties while creating safe, healthy environments for everyone who uses them.</p>
-      <p>We manage, operate, supervise and maintain commercial buildings, offices, residential communities, hospitals, hotels, guest houses and farmhouses. Technical teams, soft-service crews and hospitality staff work to one plan, report into one dashboard and answer to one contract.</p>
+      <p>Backed by 15+ years of facility management experience across industries, we focus on green building concepts and energy-saving practices to keep your premises safe, efficient and sustainable.</p>
       <div class="pillars">
         <div><span class="pillars__num">01</span><h3>Integrated</h3><p>Every discipline under one roof and one SLA.</p></div>
         <div><span class="pillars__num">02</span><h3>Accountable</h3><p>Transparent reporting, audits and compliance tracking.</p></div>
@@ -132,50 +112,50 @@
     <div class="section__head reveal">
       <p class="eyebrow">What we do</p>
       <h2>Six verticals. <em>One</em> seamless operation.</h2>
-      <p class="section__sub">From the plant room to the reception desk, every service is delivered by trained specialists and governed by a single, measurable plan.</p>
+      <p class="section__sub">Trained specialists. One plan. One point of contact.</p>
     </div>
 
     <div class="cards">
       <article class="card reveal">
         <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></div>
         <h3>MEP & Technical Services</h3>
-        <p>Mechanical, electrical and plumbing experts running complex building systems — HVAC, DG sets, STPs, lifts, fire systems and repairs.</p>
+        <p>HVAC, electrical, plumbing, DG sets, lifts and fire systems.</p>
         <ul><li>Preventive & breakdown maintenance</li><li>Technical audits</li><li>Comprehensive AMC</li></ul>
       </article>
 
       <article class="card reveal">
         <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>Security Management</h3>
-        <p>24/7 protection through trained personnel, advanced surveillance and access-control systems tailored to each site's risk profile.</p>
+        <p>Trained guards, CCTV and access control — 24/7.</p>
         <ul><li>Manned guarding & patrols</li><li>CCTV & access control</li><li>Emergency response</li></ul>
       </article>
 
       <article class="card reveal">
         <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-6 7 6v11"/><path d="M9 21v-6h6v6"/><path d="M12 2v2"/></svg></div>
         <h3>Soft Services</h3>
-        <p>Housekeeping, cleaning, sanitation and pest control by skilled crews using eco-friendly products and documented checklists.</p>
-        <ul><li>Housekeeping & deep cleaning</li><li>Pest control</li><li>Waste management</li></ul>
+        <p>Clean, hygienic and welcoming premises, every day.</p>
+        <ul><li>Housekeeping & deep cleaning</li><li>Front office management</li><li>Pest control</li><li>Waste management</li></ul>
       </article>
 
       <article class="card reveal">
         <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12C12 7 8 4 3 4c0 5 4 8 9 8Z"/><path d="M12 14c0-4 3-7 9-7 0 4-3 7-9 7Z"/></svg></div>
-        <h3>Landscaping</h3>
-        <p>Designing and maintaining indoor and outdoor green spaces — gardens, lawns and planters that elevate every arrival.</p>
-        <ul><li>Garden & lawn maintenance</li><li>Indoor plantscaping</li><li>Seasonal upgrades</li></ul>
+        <h3>Horticulture & Landscaping</h3>
+        <p>Healthy, well-kept green spaces, indoors and out.</p>
+        <ul><li>Lawn & plant maintenance</li><li>Indoor plantscaping</li><li>Landscape development</li></ul>
       </article>
 
       <article class="card reveal">
         <div class="card__icon"><svg viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></div>
         <h3>Hospitality & Cafeteria</h3>
-        <p>Setting up and running cafeterias, canteens, food courts, guest houses and farmhouses — including catering and support services.</p>
+        <p>Cafeterias, catering and guest house operations.</p>
         <ul><li>Cafeteria & food courts</li><li>Catering</li><li>Guest house operations</li></ul>
       </article>
 
       <article class="card reveal">
         <div class="card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div>
         <h3>Workspace & Events</h3>
-        <p>Office management, managed workspaces and workplace administration, plus event planning, coordination and venue management.</p>
-        <ul><li>Managed workspaces</li><li>Front office & admin</li><li>Events & venues</li></ul>
+        <p>Managed offices, administration and events.</p>
+        <ul><li>Managed workspaces</li><li>Office administration</li><li>Events & venues</li></ul>
       </article>
     </div>
 
@@ -212,16 +192,16 @@
     <div class="why__intro reveal">
       <p class="eyebrow">Why Havya</p>
       <h2>Smart solutions for <em>smarter</em> buildings.</h2>
-      <p class="section__sub">We combine disciplined field teams with digital tools, so you always know what was done, when, and how well.</p>
+      <p class="section__sub">Disciplined teams, backed by digital tracking.</p>
       <a href="#contact" class="btn btn--blue">Talk to our team <span aria-hidden="true">→</span></a>
     </div>
     <ol class="why__list">
-      <li class="reveal"><div><h3>Integrated energy-efficiency strategies</h3><p>Monitoring and tuning of plant and utilities to cut consumption without compromising comfort.</p></div></li>
-      <li class="reveal"><div><h3>Centralized digital repository</h3><p>Asset registers, checklists, logs and reports in one place — available whenever you need them.</p></div></li>
-      <li class="reveal"><div><h3>Technology-enabled tracking</h3><p>Ticketing and attendance tracking for compliance and complete transparency.</p></div></li>
-      <li class="reveal"><div><h3>Green building practices</h3><p>Eco-friendly consumables, waste segregation and water-wise landscaping as standard.</p></div></li>
-      <li class="reveal"><div><h3>Specialized audit teams</h3><p>Independent technical and safety audits that surface risks before they become failures.</p></div></li>
-      <li class="reveal"><div><h3>Skilled manpower deployment</h3><p>Verified, trained and supervised staff — matched to your site and scaled as you grow.</p></div></li>
+      <li class="reveal"><div><h3>Integrated energy-efficiency strategies</h3><p>Lower energy use without compromising comfort.</p></div></li>
+      <li class="reveal"><div><h3>Centralized digital repository</h3><p>All records and reports in one place.</p></div></li>
+      <li class="reveal"><div><h3>Technology-enabled tracking</h3><p>Full compliance and transparency.</p></div></li>
+      <li class="reveal"><div><h3>Green building practices</h3><p>Eco-friendly products and waste segregation.</p></div></li>
+      <li class="reveal"><div><h3>Specialized audit teams</h3><p>Risks found before they become failures.</p></div></li>
+      <li class="reveal"><div><h3>Skilled manpower deployment</h3><p>Verified, trained and supervised staff.</p></div></li>
     </ol>
   </div>
 </section>
@@ -234,10 +214,10 @@
       <h2>From walkthrough to <em>well-run</em>, in four steps.</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><span class="step__n">1</span><h3>Assess</h3><p>Site survey and technical audit of assets, systems and service gaps.</p></div>
-      <div class="step reveal"><span class="step__n">2</span><h3>Design</h3><p>A tailored scope, staffing plan and SLAs aligned to your budget.</p></div>
-      <div class="step reveal"><span class="step__n">3</span><h3>Deploy</h3><p>Structured mobilisation with trained teams, tools and SOPs.</p></div>
-      <div class="step reveal"><span class="step__n">4</span><h3>Optimise</h3><p>Monthly reviews, KPIs and continuous improvement.</p></div>
+      <div class="step reveal"><span class="step__n">1</span><h3>Assess</h3><p>Site survey and technical audit.</p></div>
+      <div class="step reveal"><span class="step__n">2</span><h3>Design</h3><p>Tailored scope, staffing and SLAs.</p></div>
+      <div class="step reveal"><span class="step__n">3</span><h3>Deploy</h3><p>Trained teams, tools and SOPs.</p></div>
+      <div class="step reveal"><span class="step__n">4</span><h3>Optimise</h3><p>Reviews, KPIs and improvement.</p></div>
     </div>
   </div>
 </section>
@@ -248,7 +228,7 @@
     <div class="contact__info reveal">
       <p class="eyebrow eyebrow--orange">Let's talk</p>
       <h2>Ready for facilities that <em>just work</em>?</h2>
-      <p>Tell us about your property and we'll arrange a no-obligation site assessment and proposal.</p>
+      <p>Get a free, no-obligation site assessment.</p>
       <a href="site-assessment.html" class="btn btn--orange contact__cta">Request a Site Assessment <span aria-hidden="true">→</span></a>
       <ul class="contact__list">
         <li><span>Email</span><a href="mailto:info@fnglobal.in">info@fnglobal.in</a></li>
@@ -284,7 +264,7 @@
       <img class="footer__logo" src="assets/logo-white.svg" alt="Havya IFM">
       <p>Integrated Facility Management.<br>15+ years of expertise in safe, sustainable facilities.</p>
     </div>
-    <div><h4>Services</h4><a href="#services">MEP & Technical</a><a href="#services">Security</a><a href="#services">Soft Services</a><a href="#services">Landscaping</a><a href="#services">Hospitality</a></div>
+    <div><h4>Services</h4><a href="#services">MEP & Technical</a><a href="#services">Security</a><a href="#services">Soft Services</a><a href="#services">Horticulture</a><a href="#services">Hospitality</a></div>
     <div><h4>Company</h4><a href="#about">About</a><a href="#why">Why Havya</a><a href="#approach">Approach</a><a href="#contact">Contact</a></div>
     <div><h4>Reach us</h4><a href="tel:+917676276066">+91 76762 76066</a><a href="mailto:info@fnglobal.in">info@fnglobal.in</a><a href="https://havyaifm.com">havyaifm.com</a></div>
   </div>
@@ -297,5 +277,6 @@
 <script src="js/config.js"></script>
 <script src="js/forms.js"></script>
 <script src="js/main.js"></script>
+<script src="js/hero.js"></script>
 </body>
 </html>
